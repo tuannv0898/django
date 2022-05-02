@@ -4,5 +4,5 @@ from django.db import models
 
 
 class UhfRfModuleModel(models.Model):
-    address = models.CharField(max_length=16)
+    address = models.CharField(max_length=16, unique=True)
     state = models.BooleanField(default=False)

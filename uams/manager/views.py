@@ -19,7 +19,7 @@ class ManagerApi(APIView):
 
         if cmd == 'get-all-uhfs':
             modules = modules_manager.get_all_modules()
-            serializer = [UhfRfModuleSerializer(module).data for module in modules]
+            serializer = [UhfRfModuleSerializer(module).data for address, module in modules.items()]
 
             return Response(data=serializer, status=status.HTTP_200_OK)
         else:
